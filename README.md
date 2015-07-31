@@ -44,8 +44,8 @@ The first step in the conversion process is to apply transformations to the imag
   Replace the ```ser``` file prefix with your file prefix (e.g. ```AnnoFile``` in the above directory tree).  
    * **(line 27)**  ```anno_metadata = cell(2409,5);```
    We will need to create a metadata object with enough space to store metadata for all annotations in your project. Replace the first number (**2409** above) with the number of annotations in your project.
-   * **(line 110-115)*** If you have any contours you don't want converted, enter their names here.
-   * **(line 132)*** Replace the last two numbers with the image size of your *raw* image files. Here, the image size is **4096** x **4096**.
+   * **(line 110-115)** If you have any contours you don't want converted, enter their names here.
+   * **(line 132)** Replace the last two numbers with the image size of your *raw* image files. Here, the image size is **4096** x **4096**.
 5. Execute the script by running ```extract_annotation``` on the Matlab command line.
 
 When the script finishes, you will have a directory called ```em``` containing all aligned image files, and a directory called ```anno_raw``` containing image files for each annotation in your Reconstruct project.
@@ -65,7 +65,7 @@ The ```process_annos.m``` script groups annotations. This script is heavily cust
   * **s** (synapses)
   * **g** (glia)
   * **c**, **p**, **r**, **m** (subcellular components)
-  *Note:* the labels given above don't matter, and depend only on how you want to characterize your data. For example, if you wanted to label mitochondria as *a* and all other components as *d*, that would be fine. It is up to you to define and remember a code. Feel free to create your own codes!
+*Note:* the labels given above don't matter, and depend only on how you want to characterize your data. For example, if you wanted to label mitochondria as *a* and all other components as *d*, that would be fine. It is up to you to define and remember a code. Feel free to create your own codes!
 4. Open the ```anno_raw/anno_metadata.csv``` file and add your code for each annotation to the first empty column in the file.
 5. For each group, run the following lines:
    *  ```anno_group = groupAnnos(anno_info,'a','d');```
