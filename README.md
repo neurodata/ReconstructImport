@@ -65,13 +65,13 @@ The ```process_annos.m``` script groups annotations. This script is heavily cust
   * **s** (synapses)
   * **g** (glia)
   * **c**, **p**, **r**, **m** (subcellular components)
-*Note:* the labels given above don't matter, and depend only on how you want to characterize your data. For example, if you wanted to label mitochondria as *a* and all other components as *d*, that would be fine. It is up to you to define and remember a code. Feel free to create your own codes!
+  * *Note:* the labels given above don't matter, and depend only on how you want to characterize your data. For example, if you wanted to label mitochondria as *a* and all other components as *d*, that would be fine. It is up to you to define and remember a code. Feel free to create your own codes!
 4. Open the ```anno_raw/anno_metadata.csv``` file and add your code for each annotation to the first empty column in the file.
 5. For each group, run the following lines:
-   *  ```anno_group = groupAnnos(anno_info,'a','d');```
-   *  ```group_name = 'axon_dendrite';```
-   You can combine multiple groups by adding more groups to the function call to ```groupAnnos``` (the above line combines group **a** and **d**)
-   The **group_name** parameter specifies the output filename prefix.
+   1.  ```anno_group = groupAnnos(anno_info,'a','d');```
+   2.  ```group_name = 'axon_dendrite';```
+   * You can combine multiple groups by adding more groups to the function call to ```groupAnnos``` (the above line combines group **a** and **d**)
+   * The **group_name** parameter specifies the output filename prefix.
 6. Create a directory called ```annos_processed``` in your Reconstruct Project directory.
 7. Run the processing code at the bottom of the ```process_annos.m``` file (lines 105-123).
 
